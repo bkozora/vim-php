@@ -58,7 +58,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 
-Plugin 'msanders/snipmate'
+" Plugin 'msanders/snipmate'
 Plugin 'millermedeiros/vim-statline'
 Plugin 'ervandew/supertab'
 
@@ -75,8 +75,11 @@ Plugin 'gundo'
 " Themes
 Plugin 'Solarized'
 Plugin 'Wombat'
-Plugin 'wombat256'
 
+Plugin 'sourcebeautify'
+Plugin '_jsbeautify'
+Plugin 'vim-jsbeautify'
+Plugin 'jsbeautify'
 
 
 
@@ -112,14 +115,10 @@ if has("gui_macvim")
     colorscheme solarized
 else
     set background=dark
-    colorscheme wombat
+    colorscheme wombat256
 endif
 
-" make sure that cyrillic input is supported
-"set keymap=russian-jcukenwin
-"set iminsert=0
-"set imsearch=0
-"highlight lCursor guifg=NONE guibg=#cae682
+highlight lCursor guifg=NONE guibg=#cae682
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
@@ -135,7 +134,7 @@ set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
 " Map undotree
-nnoremap <Leader>t :UndotreeToggle<cr>
+nnoremap <Leader>ut :UndotreeToggle<cr>
 
 " Map gundo tree view of undos
 
@@ -161,7 +160,7 @@ if !exists('g:undotree_HighlightChangedText')
 endif
 
 " Map gundo tree view of undos
-" nnoremap <Leader>u :GundoToggle<CR>
+nnoremap <Leader>gu :GundoToggle<CR>
 
 " Disable gundo preview screen (it's sllllooooowwwwww)...
 " let g:gundo_tree_statusline
@@ -170,7 +169,6 @@ endif
 set t_Co=256
 
 " make sure that mouse is enabled
-
 set mouse=a
 
 "nnoremap <F1> :call ToggleMouse()
